@@ -62,7 +62,7 @@ class Result
         $result = $_POST;
 
         if (empty($result))
-            $result = file_get_contents('php://input');
+            $result = json_decode(file_get_contents('php://input'), true);
         return $result;
 
     }
